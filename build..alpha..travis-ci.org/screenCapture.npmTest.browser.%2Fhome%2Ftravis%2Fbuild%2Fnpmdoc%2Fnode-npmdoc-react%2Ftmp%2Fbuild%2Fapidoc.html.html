@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://facebook.github.io/react/"
-
-    >react (v15.5.3)</a>
+    <a href="https://facebook.github.io/react/">react (v15.5.3)</a>
 </h1>
 <h4>React is a JavaScript library for building user interfaces.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.react">module react</a><ol>
 
@@ -2204,9 +2197,9 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">__spread = function () {
-  process.env.NODE_ENV !== &#x27;production&#x27; ? warning(warned, &#x27;React.__spread is deprecated and should not be used. Use &#x27; + &#x27;Object.
-assign directly or another helper function with similar &#x27; + &#x27;semantics. You may be seeing this warning due to your compiler. &#x27; + &#x27;
-See https://fb.me/react-spread-deprecation for more details.&#x27;) : void 0;
+  process.env.NODE_ENV !== 'production' ? warning(warned, 'React.__spread is deprecated and should not be used. Use ' + 'Object.
+assign directly or another helper function with similar ' + 'semantics. You may be seeing this warning due to your compiler. ' + '
+See https://fb.me/react-spread-deprecation for more details.') : void 0;
   warned = true;
   return _assign.apply(null, arguments);
 }</pre></li>
@@ -2224,7 +2217,7 @@ See https://fb.me/react-spread-deprecation for more details.&#x27;) : void 0;
     <ul>
     <li>description and source-code<pre class="apidocCodePre">cloneElement = function (element, props, children) {
   var newElement = ReactElement.cloneElement.apply(this, arguments);
-  for (var i = 2; i &#x3c; arguments.length; i++) {
+  for (var i = 2; i &lt; arguments.length; i++) {
     validateChildKeys(arguments[i], newElement.type);
   }
   validatePropTypes(newElement);
@@ -2243,22 +2236,22 @@ See https://fb.me/react-spread-deprecation for more details.&#x27;) : void 0;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">createClass = function (spec) {
-  if (process.env.NODE_ENV !== &#x27;production&#x27;) {
-    process.env.NODE_ENV !== &#x27;production&#x27; ? warning(didWarnDeprecated, &#x27;%s: React.createClass is deprecated and will be removed
-in version 16. &#x27; + &#x27;Use plain JavaScript classes instead. If you\&#x27;re not yet ready to &#x27; + &#x27;migrate, create-react-class is available on npm as a &#x27; + &#x27;drop-in replacement.&#x27;, spec &#x26;&#x26; spec.displayName || &#x27;A Component&#x27;) : void 0;
+  if (process.env.NODE_ENV !== 'production') {
+    process.env.NODE_ENV !== 'production' ? warning(didWarnDeprecated, '%s: React.createClass is deprecated and will be removed
+in version 16. ' + 'Use plain JavaScript classes instead. If you\'re not yet ready to ' + 'migrate, create-react-class is available on npm as a ' + 'drop-in replacement.', spec &amp;&amp; spec.displayName || 'A Component') : void 0;
     didWarnDeprecated = true;
   }
 
-  // To keep our warnings more understandable, we&#x27;ll use a little hack here to
-  // ensure that Constructor.name !== &#x27;Constructor&#x27;. This makes sure we don&#x27;t
-  // unnecessarily identify a class without displayName as &#x27;Constructor&#x27;.
+  // To keep our warnings more understandable, we'll use a little hack here to
+  // ensure that Constructor.name !== 'Constructor'. This makes sure we don't
+  // unnecessarily identify a class without displayName as 'Constructor'.
   var Constructor = identity(function (props, context, updater) {
     // This constructor gets overridden by mocks. The argument is used
     // by mocks to assert on what gets mounted.
 
-    if (process.env.NODE_ENV !== &#x27;production&#x27;) {
-      process.env.NODE_ENV !== &#x27;production&#x27; ? warning(this instanceof Constructor, &#x27;Something is calling a React component directly
-. Use a factory or &#x27; + &#x27;JSX instead. See: https://fb.me/react-legacyfactory&#x27;) : void 0;
+    if (process.env.NODE_ENV !== 'production') {
+      process.env.NODE_ENV !== 'production' ? warning(this instanceof Constructor, 'Something is calling a React component directly
+. Use a factory or ' + 'JSX instead. See: https://fb.me/react-legacyfactory') : void 0;
     }
 
     // Wire up auto-binding
@@ -2273,21 +2266,21 @@ in version 16. &#x27; + &#x27;Use plain JavaScript classes instead. If you\&#x27
 
     this.state = null;
 
-    // ReactClasses doesn&#x27;t have constructors. Instead, they use the
+    // ReactClasses doesn't have constructors. Instead, they use the
     // getInitialState and componentWillMount methods for initialization.
 
     var initialState = this.getInitialState ? this.getInitialState() : null;
-    if (process.env.NODE_ENV !== &#x27;production&#x27;) {
-      // We allow auto-mocks to proceed as if they&#x27;re returning null.
-      if (initialState === undefined &#x26;&#x26; this.getInitialState._isMockFunction) {
+    if (process.env.NODE_ENV !== 'production') {
+      // We allow auto-mocks to proceed as if they're returning null.
+      if (initialState === undefined &amp;&amp; this.getInitialState._isMockFunction) {
         // This is probably bad practice. Consider warning here and
         // deprecating this convenience.
         initialState = null;
       }
     }
-    !(typeof initialState === &#x27;object&#x27; &#x26;&#x26; !Array.isArray(initialState)) ? process.env.NODE_ENV !== &#x27;production&#x27; ? invariant(false
-, &#x27;%s.getInitialState(): must return an object or null&#x27;, Constructor.displayName || &#x27;ReactCompositeComponent&#x27;) : _prodInvariant(&#x27;
-82&#x27;, Constructor.displayName || &#x27;ReactCompositeComponent&#x27;) : void 0;
+    !(typeof initialState === 'object' &amp;&amp; !Array.isArray(initialState)) ? process.env.NODE_ENV !== 'production' ? invariant(false
+, '%s.getInitialState(): must return an object or null', Constructor.displayName || 'ReactCompositeComponent') : _prodInvariant('
+82', Constructor.displayName || 'ReactCompositeComponent') : void 0;
 
     this.state = initialState;
   });
@@ -2304,10 +2297,10 @@ in version 16. &#x27; + &#x27;Use plain JavaScript classes instead. If you\&#x27
     Constructor.defaultProps = Constructor.getDefaultProps();
   }
 
-  if (process.env.NODE_ENV !== &#x27;production&#x27;) {
+  if (process.env.NODE_ENV !== 'production') {
     // This is a tag to indicate that the use of these method names is ok,
-    // since it&#x27;s used with createClass. If it&#x27;s not, then it&#x27;s likely a
-    // mistake so we&#x27;ll warn you to use the static property, property
+    // since it's used with createClass. If it's not, then it's likely a
+    // mistake so we'll warn you to use the static property, property
     // initializer or constructor respectively.
     if (Constructor.getDefaultProps) {
       Constructor.getDefaultProps.isReactClassApproved = {};
@@ -2317,14 +2310,14 @@ in version 16. &#x27; + &#x27;Use plain JavaScript classes instead. If you\&#x27
     }
   }
 
-  !Constructor.prototype.render ? process.env.NODE_ENV !== &#x27;production&#x27; ? invariant(false, &#x27;createClass(...): Class specification
- must implement a `render` method.&#x27;) : _prodInvariant(&#x27;83&#x27;) : void 0;
+  !Constructor.prototype.render ? process.env.NODE_ENV !== 'production' ? invariant(false, 'createClass(...): Class specification
+ must implement a `render` method.') : _prodInvariant('83') : void 0;
 
-  if (process.env.NODE_ENV !== &#x27;production&#x27;) {
-    process.env.NODE_ENV !== &#x27;production&#x27; ? warning(!Constructor.prototype.componentShouldUpdate, &#x27;%s has a method called &#x27; + &#x27;componentShouldUpdate
-(). Did you mean shouldComponentUpdate()? &#x27; + &#x27;The name is phrased as a question because the function is &#x27; + &#x27;expected to return
- a value.&#x27;, spec.displayName || &#x27;A component&#x27;) : void 0;
-    process.env.NODE_ENV !== &#x27;production&#x27; ? warning(!Constructor.prototype.componentWillRecieveProps, &#x27;%s has a method called &#x27; + &#x27;
+  if (process.env.NODE_ENV !== 'production') {
+    process.env.NODE_ENV !== 'production' ? warning(!Constructor.prototype.componentShouldUpdate, '%s has a method called ' + 'componentShouldUpdate
+(). Did you mean shouldComponentUpdate()? ' + 'The name is phrased as a question because the function is ' + 'expected to return
+ a value.', spec.displayName || 'A component') : void 0;
+    process.env.NODE_ENV !== 'production' ? warning(!Constructor.prototype.componentWillRecieveProps, '%s has a method called ' + '
 componentWillRecieveP ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2339,14 +2332,14 @@ componentWillRecieveP ...</pre></li>
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">createElement = function (type, props, children) {
-  var validType = typeof type === &#x27;string&#x27; || typeof type === &#x27;function&#x27;;
-  // We warn in this case but don&#x27;t throw. We expect the element creation to
+  var validType = typeof type === 'string' || typeof type === 'function';
+  // We warn in this case but don't throw. We expect the element creation to
   // succeed and there will likely be errors in render.
   if (!validType) {
-    if (typeof type !== &#x27;function&#x27; &#x26;&#x26; typeof type !== &#x27;string&#x27;) {
-      var info = &#x27;&#x27;;
-      if (type === undefined || typeof type === &#x27;object&#x27; &#x26;&#x26; type !== null &#x26;&#x26; Object.keys(type).length === 0) {
-        info += &#x27; You likely forgot to export your component from the file &#x27; + &#x27;it\&#x27;s defined in.&#x27;;
+    if (typeof type !== 'function' &amp;&amp; typeof type !== 'string') {
+      var info = '';
+      if (type === undefined || typeof type === 'object' &amp;&amp; type !== null &amp;&amp; Object.keys(type).length === 0) {
+        info += ' You likely forgot to export your component from the file ' + 'it\'s defined in.';
       }
 
       var sourceInfo = getSourceInfoErrorAddendum(props);
@@ -2358,8 +2351,8 @@ componentWillRecieveP ...</pre></li>
 
       info += ReactComponentTreeHook.getCurrentStackAddendum();
 
-      process.env.NODE_ENV !== &#x27;production&#x27; ? warning(false, &#x27;React.createElement: type is invalid -- expected a string (for &#x27; + &#x27;
-built-in components) or a class/function (for composite &#x27; + &#x27;components) but got: %s.%s&#x27;, type == null ? type : typeof type, info
+      process.env.NODE_ENV !== 'production' ? warning(false, 'React.createElement: type is invalid -- expected a string (for ' + '
+built-in components) or a class/function (for composite ' + 'components) but got: %s.%s', type == null ? type : typeof type, info
 ) : void 0;
     }
   }
@@ -2372,13 +2365,13 @@ built-in components) or a class/function (for composite &#x27; + &#x27;component
     return element;
   }
 
-  // Skip key warning if the type isn&#x27;t valid since our key validation logic
-  // doesn&#x27;t expect a non-string/function type and can throw confusing errors.
-  // We don&#x27;t want exception behavior to differ between dev and prod.
+  // Skip key warning if the type isn't valid since our key validation logic
+  // doesn't expect a non-string/function type and can throw confusing errors.
+  // We don't want exception behavior to differ between dev and prod.
   // (Rendering will throw with a helpful message and as soon as the type is
   // fixed, the key warnings will appear.)
   if (validType) {
-    for (var i = 2; i &#x3c; arguments.length; i++) {
+    for (var i = 2; i &lt; arguments.length; i++) {
       validateChildKeys(arguments[i], type);
     }
   }
@@ -2404,14 +2397,14 @@ built-in components) or a class/function (for composite &#x27; + &#x27;component
   // Legacy hook TODO: Warn if this is accessed
   validatedFactory.type = type;
 
-  if (process.env.NODE_ENV !== &#x27;production&#x27;) {
+  if (process.env.NODE_ENV !== 'production') {
     if (canDefineProperty) {
-      Object.defineProperty(validatedFactory, &#x27;type&#x27;, {
+      Object.defineProperty(validatedFactory, 'type', {
         enumerable: false,
         get: function () {
-          process.env.NODE_ENV !== &#x27;production&#x27; ? warning(false, &#x27;Factory.type is deprecated. Access the class directly &#x27; + &#x27;before
- passing it to createFactory.&#x27;) : void 0;
-          Object.defineProperty(this, &#x27;type&#x27;, {
+          process.env.NODE_ENV !== 'production' ? warning(false, 'Factory.type is deprecated. Access the class directly ' + 'before
+ passing it to createFactory.') : void 0;
+          Object.defineProperty(this, 'type', {
             value: type
           });
           return type;
@@ -2451,7 +2444,7 @@ built-in components) or a class/function (for composite &#x27; + &#x27;component
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">isValidElement = function (object) {
-  return typeof object === &#x27;object&#x27; &#x26;&#x26; object !== null &#x26;&#x26; object.$$typeof === REACT_ELEMENT_TYPE;
+  return typeof object === 'object' &amp;&amp; object !== null &amp;&amp; object.$$typeof === REACT_ELEMENT_TYPE;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2540,8 +2533,8 @@ built-in components) or a class/function (for composite &#x27; + &#x27;component
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function onlyChild(children) {
-  !ReactElement.isValidElement(children) ? process.env.NODE_ENV !== &#x27;production&#x27; ? invariant(false, &#x27;React.Children.only expected
- to receive a single React element child.&#x27;) : _prodInvariant(&#x27;143&#x27;) : void 0;
+  !ReactElement.isValidElement(children) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'React.Children.only expected
+ to receive a single React element child.') : _prodInvariant('143') : void 0;
   return children;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2606,7 +2599,7 @@ built-in components) or a class/function (for composite &#x27; + &#x27;component
     <li>description and source-code<pre class="apidocCodePre">forceUpdate = function (callback) {
   this.updater.enqueueForceUpdate(this);
   if (callback) {
-    this.updater.enqueueCallback(this, callback, &#x27;forceUpdate&#x27;);
+    this.updater.enqueueCallback(this, callback, 'forceUpdate');
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2622,12 +2615,12 @@ built-in components) or a class/function (for composite &#x27; + &#x27;component
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setState = function (partialState, callback) {
-  !(typeof partialState === &#x27;object&#x27; || typeof partialState === &#x27;function&#x27; || partialState == null) ? process.env.NODE_ENV !== &#x27;
-production&#x27; ? invariant(false, &#x27;setState(...): takes an object of state variables to update or a function which returns an object
- of state variables.&#x27;) : _prodInvariant(&#x27;85&#x27;) : void 0;
+  !(typeof partialState === 'object' || typeof partialState === 'function' || partialState == null) ? process.env.NODE_ENV !== '
+production' ? invariant(false, 'setState(...): takes an object of state variables to update or a function which returns an object
+ of state variables.') : _prodInvariant('85') : void 0;
   this.updater.enqueueSetState(this, partialState);
   if (callback) {
-    this.updater.enqueueCallback(this, callback, &#x27;setState&#x27;);
+    this.updater.enqueueCallback(this, callback, 'setState');
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -4373,14 +4366,14 @@ production&#x27; ? invariant(false, &#x27;setState(...): takes an object of stat
     <li>description and source-code<pre class="apidocCodePre">function escape(key) {
   var escapeRegex = /[=:]/g;
   var escaperLookup = {
-    &#x27;=&#x27;: &#x27;=0&#x27;,
-    &#x27;:&#x27;: &#x27;=2&#x27;
+    '=': '=0',
+    ':': '=2'
   };
-  var escapedString = (&#x27;&#x27; + key).replace(escapeRegex, function (match) {
+  var escapedString = ('' + key).replace(escapeRegex, function (match) {
     return escaperLookup[match];
   });
 
-  return &#x27;$&#x27; + escapedString;
+  return '$' + escapedString;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -4397,12 +4390,12 @@ production&#x27; ? invariant(false, &#x27;setState(...): takes an object of stat
     <li>description and source-code<pre class="apidocCodePre">function unescape(key) {
   var unescapeRegex = /(=0|=2)/g;
   var unescaperLookup = {
-    &#x27;=0&#x27;: &#x27;=&#x27;,
-    &#x27;=2&#x27;: &#x27;:&#x27;
+    '=0': '=',
+    '=2': ':'
   };
-  var keySubstring = key[0] === &#x27;.&#x27; &#x26;&#x26; key[1] === &#x27;$&#x27; ? key.substring(2) : key.substring(1);
+  var keySubstring = key[0] === '.' &amp;&amp; key[1] === '$' ? key.substring(2) : key.substring(1);
 
-  return (&#x27;&#x27; + keySubstring).replace(unescapeRegex, function (match) {
+  return ('' + keySubstring).replace(unescapeRegex, function (match) {
     return unescaperLookup[match];
   });
 }</pre></li>
@@ -4451,18 +4444,18 @@ production&#x27; ? invariant(false, &#x27;setState(...): takes an object of stat
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function createArrayOfTypeChecker(typeChecker) {
   function validate(props, propName, componentName, location, propFullName) {
-    if (typeof typeChecker !== &#x27;function&#x27;) {
-      return new PropTypeError(&#x27;Property `&#x27; + propFullName + &#x27;` of component `&#x27; + componentName + &#x27;` has invalid PropType notation
- inside arrayOf.&#x27;);
+    if (typeof typeChecker !== 'function') {
+      return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation
+ inside arrayOf.');
     }
     var propValue = props[propName];
     if (!Array.isArray(propValue)) {
       var propType = getPropType(propValue);
-      return new PropTypeError(&#x27;Invalid &#x27; + location + &#x27; `&#x27; + propFullName + &#x27;` of type &#x27; + (&#x27;`&#x27; + propType + &#x27;` supplied to `&#x27; +
-componentName + &#x27;`, expected an array.&#x27;));
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' +
+componentName + '`, expected an array.'));
     }
-    for (var i = 0; i &#x3c; propValue.length; i++) {
-      var error = typeChecker(propValue, i, componentName, location, propFullName + &#x27;[&#x27; + i + &#x27;]&#x27;, ReactPropTypesSecret);
+    for (var i = 0; i &lt; propValue.length; i++) {
+      var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
       if (error instanceof Error) {
         return error;
       }
@@ -4497,35 +4490,35 @@ componentName + &#x27;`, expected an array.&#x27;));
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-  if (process.env.NODE_ENV !== &#x27;production&#x27;) {
+  if (process.env.NODE_ENV !== 'production') {
     for (var typeSpecName in typeSpecs) {
       if (typeSpecs.hasOwnProperty(typeSpecName)) {
         var error;
-        // Prop type validation may throw. In case they do, we don&#x27;t want to
-        // fail the render phase where it didn&#x27;t fail before. So we log it.
-        // After these have been cleaned up, we&#x27;ll let them throw.
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
         try {
-          // This is intentionally an invariant that gets caught. It&#x27;s the same
+          // This is intentionally an invariant that gets caught. It's the same
           // behavior as without this statement except with a better message.
-          invariant(typeof typeSpecs[typeSpecName] === &#x27;function&#x27;, &#x27;%s: %s type `%s` is invalid; it must be a function, usually
-from &#x27; + &#x27;React.PropTypes.&#x27;, componentName || &#x27;React class&#x27;, location, typeSpecName);
+          invariant(typeof typeSpecs[typeSpecName] === 'function', '%s: %s type `%s` is invalid; it must be a function, usually
+from ' + 'React.PropTypes.', componentName || 'React class', location, typeSpecName);
           error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
         } catch (ex) {
           error = ex;
         }
-        process.env.NODE_ENV !== &#x27;production&#x27; ? warning(!error || error instanceof Error, &#x27;%s: type specification of %s `%s` is
-invalid; the type checker &#x27; + &#x27;function must return `null` or an `Error` but returned a %s. &#x27; + &#x27;You may have forgotten to pass
-an argument to the type checker &#x27; + &#x27;creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and &#x27; + &#x27;shape all require an argument
-).&#x27;, componentName || &#x27;React class&#x27;, location, typeSpecName, typeof error) : void 0;
-        if (error instanceof Error &#x26;&#x26; !(error.message in loggedTypeFailures)) {
+        process.env.NODE_ENV !== 'production' ? warning(!error || error instanceof Error, '%s: type specification of %s `%s` is
+invalid; the type checker ' + 'function must return `null` or an `Error` but returned a %s. ' + 'You may have forgotten to pass
+an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument
+).', componentName || 'React class', location, typeSpecName, typeof error) : void 0;
+        if (error instanceof Error &amp;&amp; !(error.message in loggedTypeFailures)) {
           // Only monitor this failure once because there tends to be a lot of the
           // same error.
           loggedTypeFailures[error.message] = true;
 
-          var stack = getStack ? getStack() : &#x27;&#x27;;
+          var stack = getStack ? getStack() : '';
 
-          process.env.NODE_ENV !== &#x27;production&#x27; ? warning(false, &#x27;Failed %s type: %s%s&#x27;, location, error.message, stack != null ?
-stack : &#x27;&#x27;) : void 0;
+          process.env.NODE_ENV !== 'production' ? warning(false, 'Failed %s type: %s%s', location, error.message, stack != null ?
+stack : '') : void 0;
         }
       }
     }
@@ -4574,8 +4567,8 @@ stack : &#x27;&#x27;) : void 0;
     if (!(props[propName] instanceof expectedClass)) {
       var expectedClassName = expectedClass.name || ANONYMOUS;
       var actualClassName = getClassName(props[propName]);
-      return new PropTypeError(&#x27;Invalid &#x27; + location + &#x27; `&#x27; + propFullName + &#x27;` of type &#x27; + (&#x27;`&#x27; + actualClassName + &#x27;` supplied
- to `&#x27; + componentName + &#x27;`, expected &#x27;) + (&#x27;instance of `&#x27; + expectedClassName + &#x27;`.&#x27;));
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied
+ to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
     }
     return null;
   }
@@ -4634,19 +4627,19 @@ stack : &#x27;&#x27;) : void 0;
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function createObjectOfTypeChecker(typeChecker) {
   function validate(props, propName, componentName, location, propFullName) {
-    if (typeof typeChecker !== &#x27;function&#x27;) {
-      return new PropTypeError(&#x27;Property `&#x27; + propFullName + &#x27;` of component `&#x27; + componentName + &#x27;` has invalid PropType notation
- inside objectOf.&#x27;);
+    if (typeof typeChecker !== 'function') {
+      return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation
+ inside objectOf.');
     }
     var propValue = props[propName];
     var propType = getPropType(propValue);
-    if (propType !== &#x27;object&#x27;) {
-      return new PropTypeError(&#x27;Invalid &#x27; + location + &#x27; `&#x27; + propFullName + &#x27;` of type &#x27; + (&#x27;`&#x27; + propType + &#x27;` supplied to `&#x27; +
-componentName + &#x27;`, expected an object.&#x27;));
+    if (propType !== 'object') {
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' +
+componentName + '`, expected an object.'));
     }
     for (var key in propValue) {
       if (propValue.hasOwnProperty(key)) {
-        var error = typeChecker(propValue, key, componentName, location, propFullName + &#x27;.&#x27; + key, ReactPropTypesSecret);
+        var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
         if (error instanceof Error) {
           return error;
         }
@@ -4670,22 +4663,22 @@ componentName + &#x27;`, expected an object.&#x27;));
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function createEnumTypeChecker(expectedValues) {
   if (!Array.isArray(expectedValues)) {
-    process.env.NODE_ENV !== &#x27;production&#x27; ? warning(false, &#x27;Invalid argument supplied to oneOf, expected an instance of array.&#x27;) :
+    process.env.NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') :
 void 0;
     return emptyFunction.thatReturnsNull;
   }
 
   function validate(props, propName, componentName, location, propFullName) {
     var propValue = props[propName];
-    for (var i = 0; i &#x3c; expectedValues.length; i++) {
+    for (var i = 0; i &lt; expectedValues.length; i++) {
       if (is(propValue, expectedValues[i])) {
         return null;
       }
     }
 
     var valuesString = JSON.stringify(expectedValues);
-    return new PropTypeError(&#x27;Invalid &#x27; + location + &#x27; `&#x27; + propFullName + &#x27;` of value `&#x27; + propValue + &#x27;` &#x27; + (&#x27;supplied to `&#x27; +
-componentName + &#x27;`, expected one of &#x27; + valuesString + &#x27;.&#x27;));
+    return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + propValue + '` ' + ('supplied to `' +
+componentName + '`, expected one of ' + valuesString + '.'));
   }
   return createChainableTypeChecker(validate);
 }</pre></li>
@@ -4703,20 +4696,20 @@ componentName + &#x27;`, expected one of &#x27; + valuesString + &#x27;.&#x27;))
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function createUnionTypeChecker(arrayOfTypeCheckers) {
   if (!Array.isArray(arrayOfTypeCheckers)) {
-    process.env.NODE_ENV !== &#x27;production&#x27; ? warning(false, &#x27;Invalid argument supplied to oneOfType, expected an instance of array
-.&#x27;) : void 0;
+    process.env.NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array
+.') : void 0;
     return emptyFunction.thatReturnsNull;
   }
 
   function validate(props, propName, componentName, location, propFullName) {
-    for (var i = 0; i &#x3c; arrayOfTypeCheckers.length; i++) {
+    for (var i = 0; i &lt; arrayOfTypeCheckers.length; i++) {
       var checker = arrayOfTypeCheckers[i];
       if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
         return null;
       }
     }
 
-    return new PropTypeError(&#x27;Invalid &#x27; + location + &#x27; `&#x27; + propFullName + &#x27;` supplied to &#x27; + (&#x27;`&#x27; + componentName + &#x27;`.&#x27;));
+    return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
   }
   return createChainableTypeChecker(validate);
 }</pre></li>
@@ -4736,16 +4729,16 @@ componentName + &#x27;`, expected one of &#x27; + valuesString + &#x27;.&#x27;))
   function validate(props, propName, componentName, location, propFullName) {
     var propValue = props[propName];
     var propType = getPropType(propValue);
-    if (propType !== &#x27;object&#x27;) {
-      return new PropTypeError(&#x27;Invalid &#x27; + location + &#x27; `&#x27; + propFullName + &#x27;` of type `&#x27; + propType + &#x27;` &#x27; + (&#x27;supplied to `&#x27; +
-componentName + &#x27;`, expected `object`.&#x27;));
+    if (propType !== 'object') {
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' +
+componentName + '`, expected `object`.'));
     }
     for (var key in shapeTypes) {
       var checker = shapeTypes[key];
       if (!checker) {
         continue;
       }
-      var error = checker(propValue, key, componentName, location, propFullName + &#x27;.&#x27; + key, ReactPropTypesSecret);
+      var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
       if (error) {
         return error;
       }
@@ -5161,7 +5154,7 @@ componentName + &#x27;`, expected `object`.&#x27;));
     <li>description and source-code<pre class="apidocCodePre">forceUpdate = function (callback) {
   this.updater.enqueueForceUpdate(this);
   if (callback) {
-    this.updater.enqueueCallback(this, callback, &#x27;forceUpdate&#x27;);
+    this.updater.enqueueCallback(this, callback, 'forceUpdate');
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5177,12 +5170,12 @@ componentName + &#x27;`, expected `object`.&#x27;));
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setState = function (partialState, callback) {
-  !(typeof partialState === &#x27;object&#x27; || typeof partialState === &#x27;function&#x27; || partialState == null) ? process.env.NODE_ENV !== &#x27;
-production&#x27; ? invariant(false, &#x27;setState(...): takes an object of state variables to update or a function which returns an object
- of state variables.&#x27;) : _prodInvariant(&#x27;85&#x27;) : void 0;
+  !(typeof partialState === 'object' || typeof partialState === 'function' || partialState == null) ? process.env.NODE_ENV !== '
+production' ? invariant(false, 'setState(...): takes an object of state variables to update or a function which returns an object
+ of state variables.') : _prodInvariant('85') : void 0;
   this.updater.enqueueSetState(this, partialState);
   if (callback) {
-    this.updater.enqueueCallback(this, callback, &#x27;setState&#x27;);
+    this.updater.enqueueCallback(this, callback, 'setState');
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5199,3 +5192,4 @@ production&#x27; ? invariant(false, &#x27;setState(...): takes an object of stat
     ]
 </div>
 </div>
+</body></html>
