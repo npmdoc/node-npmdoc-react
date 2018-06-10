@@ -33229,7 +33229,7 @@ local.stateInit({
             "npm_package_homepage": "https://github.com/npmdoc/node-npmdoc-react",
             "npm_package_name": "npmdoc-react",
             "npm_package_nameLib": "npmdoc_react",
-            "npm_package_version": "0.0.6"
+            "npm_package_version": "2018.6.10"
         }
     }
 });
