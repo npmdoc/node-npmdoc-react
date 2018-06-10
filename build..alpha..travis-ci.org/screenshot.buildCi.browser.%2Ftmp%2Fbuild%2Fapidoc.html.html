@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -48,17 +48,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://reactjs.org/"
-
-    >react (16.4.0)</a>
+    <a href="https://reactjs.org/">react (16.4.0)</a>
 </h1>
 <h4>React is a JavaScript library for building user interfaces.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.react">module react</a><ol>
 
@@ -601,8 +594,7 @@
  * See https://reactjs.org/docs/react-api.html#cloneelement
  */
 function cloneElement(element, config, children) {
-!!(element === null || element === undefined) ? invariant(false, &apos;React.<span class="apidocCodeKeywordSpan">cloneElement</span
->(...): The argument must be a React element, but you passed %s.&apos;, element) : void 0;
+!!(element === null || element === undefined) ? invariant(false, 'React.<span class="apidocCodeKeywordSpan">cloneElement</span>(...): The argument must be a React element, but you passed %s.', element) : void 0;
 
 var propName = void 0;
 
@@ -627,8 +619,8 @@ var props = _assign({}, element.props);
     calculateChangedBits = null;
   } else {
     {
-      !(calculateChangedBits === null || typeof calculateChangedBits === &apos;function&apos;) ? warning(false, &apos;createContext: Expected the
- optional second argument to be a &apos; + &apos;function. Instead received: %s&apos;, calculateChangedBits) : void 0;
+      !(calculateChangedBits === null || typeof calculateChangedBits === 'function') ? warning(false, 'createContext: Expected the
+ optional second argument to be a ' + 'function. Instead received: %s', calculateChangedBits) : void 0;
     }
   }
 
@@ -678,13 +670,13 @@ var props = _assign({}, element.props);
     <li>description and source-code<pre class="apidocCodePre">function createElementWithValidation(type, props, children) {
   var validType = isValidElementType(type);
 
-  // We warn in this case but don&apos;t throw. We expect the element creation to
+  // We warn in this case but don't throw. We expect the element creation to
   // succeed and there will likely be errors in render.
   if (!validType) {
-    var info = &apos;&apos;;
-    if (type === undefined || typeof type === &apos;object&apos; &amp;&amp; type !== null &amp;&amp; Object.keys(type).length === 0) {
-      info += &apos; You likely forgot to export your component from the file &apos; + &quot;it&apos;s defined in, or you might have mixed up default
- and named imports.&quot;;
+    var info = '';
+    if (type === undefined || typeof type === 'object' &amp;&amp; type !== null &amp;&amp; Object.keys(type).length === 0) {
+      info += ' You likely forgot to export your component from the file ' + "it's defined in, or you might have mixed up default
+ and named imports.";
     }
 
     var sourceInfo = getSourceInfoErrorAddendum(props);
@@ -694,19 +686,19 @@ var props = _assign({}, element.props);
       info += getDeclarationErrorAddendum();
     }
 
-    info += getStackAddendum() || &apos;&apos;;
+    info += getStackAddendum() || '';
 
     var typeString = void 0;
     if (type === null) {
-      typeString = &apos;null&apos;;
+      typeString = 'null';
     } else if (Array.isArray(type)) {
-      typeString = &apos;array&apos;;
+      typeString = 'array';
     } else {
       typeString = typeof type;
     }
 
-    warning(false, &apos;React.createElement: type is invalid -- expected a string (for &apos; + &apos;built-in components) or a class/function
- (for composite &apos; + &apos;components) but got: %s.%s&apos;, typeString, info);
+    warning(false, 'React.createElement: type is invalid -- expected a string (for ' + 'built-in components) or a class/function
+ (for composite ' + 'components) but got: %s.%s', typeString, info);
   }
 
   var element = createElement.apply(this, arguments);
@@ -717,9 +709,9 @@ var props = _assign({}, element.props);
     return element;
   }
 
-  // Skip key warning if the type isn&apos;t valid since our key validation logic
-  // doesn&apos;t expect a non-string/function type and can throw confusing errors.
-  // We don&apos;t want exception behavior to differ between dev and prod.
+  // Skip key warning if the type isn't valid since our key validation logic
+  // doesn't expect a non-string/function type and can throw confusing errors.
+  // We don't want exception behavior to differ between dev and prod.
   // (Rendering will throw with a helpful message and as soon as the type is
   // fixed, the key warnings will appear.)
   if (validType) {
@@ -753,12 +745,12 @@ var props = _assign({}, element.props);
   validatedFactory.type = type;
   // Legacy hook: remove it
   {
-    Object.defineProperty(validatedFactory, &apos;type&apos;, {
+    Object.defineProperty(validatedFactory, 'type', {
       enumerable: false,
       get: function () {
-        lowPriorityWarning$1(false, &apos;Factory.type is deprecated. Access the class directly &apos; + &apos;before passing it to createFactory
-.&apos;);
-        Object.defineProperty(this, &apos;type&apos;, {
+        lowPriorityWarning$1(false, 'Factory.type is deprecated. Access the class directly ' + 'before passing it to createFactory
+.');
+        Object.defineProperty(this, 'type', {
           value: type
         });
         return type;
@@ -803,12 +795,12 @@ var props = _assign({}, element.props);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function forwardRef(render) {
   {
-    !(typeof render === &apos;function&apos;) ? warning(false, &apos;forwardRef requires a render function but was given %s.&apos;, render === null ? &apos;
-null&apos; : typeof render) : void 0;
+    !(typeof render === 'function') ? warning(false, 'forwardRef requires a render function but was given %s.', render === null ? '
+null' : typeof render) : void 0;
 
     if (render != null) {
-      !(render.defaultProps == null &amp;&amp; render.propTypes == null) ? warning(false, &apos;forwardRef render functions do not support propTypes
- or defaultProps. &apos; + &apos;Did you accidentally pass a React component?&apos;) : void 0;
+      !(render.defaultProps == null &amp;&amp; render.propTypes == null) ? warning(false, 'forwardRef render functions do not support propTypes
+ or defaultProps. ' + 'Did you accidentally pass a React component?') : void 0;
     }
   }
 
@@ -830,7 +822,7 @@ null&apos; : typeof render) : void 0;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isValidElement(object) {
-  return typeof object === &apos;object&apos; &amp;&amp; object !== null &amp;&amp; object.$$typeof === REACT_ELEMENT_TYPE;
+  return typeof object === 'object' &amp;&amp; object !== null &amp;&amp; object.$$typeof === REACT_ELEMENT_TYPE;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -896,17 +888,17 @@ null&apos; : typeof render) : void 0;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 		});
-		if (order2.join(&apos;&apos;) !== &apos;0123456789&apos;) {
+		if (order2.join('') !== '0123456789') {
 			return false;
 		}
 
 		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
 		var test3 = {};
-		&apos;abcdefghijklmnopqrst&apos;.split(&apos;&apos;).<span class="apidocCodeKeywordSpan">forEach</span>(function (letter) {
+		'abcdefghijklmnopqrst'.split('').<span class="apidocCodeKeywordSpan">forEach</span>(function (letter) {
 			test3[letter] = letter;
 		});
-		if (Object.keys(Object.assign({}, test3)).join(&apos;&apos;) !==
-				&apos;abcdefghijklmnopqrst&apos;) {
+		if (Object.keys(Object.assign({}, test3)).join('') !==
+				'abcdefghijklmnopqrst') {
 			return false;
 		}
 ...</pre></li>
@@ -935,12 +927,12 @@ null&apos; : typeof render) : void 0;
 		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
 		var test2 = {};
 		for (var i = 0; i &lt; 10; i++) {
-			test2[&apos;_&apos; + String.fromCharCode(i)] = i;
+			test2['_' + String.fromCharCode(i)] = i;
 		}
 		var order2 = Object.getOwnPropertyNames(test2).<span class="apidocCodeKeywordSpan">map</span>(function (n) {
 			return test2[n];
 		});
-		if (order2.join(&apos;&apos;) !== &apos;0123456789&apos;) {
+		if (order2.join('') !== '0123456789') {
 			return false;
 		}
 
@@ -958,7 +950,7 @@ null&apos; : typeof render) : void 0;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function onlyChild(children) {
-  !isValidElement(children) ? invariant(false, &apos;React.Children.only expected to receive a single React element child.&apos;) : void 0
+  !isValidElement(children) ? invariant(false, 'React.Children.only expected to receive a single React element child.') : void 0
 ;
   return children;
 }</pre></li>
@@ -1022,7 +1014,7 @@ null&apos; : typeof render) : void 0;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">forceUpdate = function (callback) {
-  this.updater.enqueueForceUpdate(this, callback, &apos;forceUpdate&apos;);
+  this.updater.enqueueForceUpdate(this, callback, 'forceUpdate');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1037,9 +1029,9 @@ null&apos; : typeof render) : void 0;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setState = function (partialState, callback) {
-  !(typeof partialState === &apos;object&apos; || typeof partialState === &apos;function&apos; || partialState == null) ? invariant(false, &apos;setState
-(...): takes an object of state variables to update or a function which returns an object of state variables.&apos;) : void 0;
-  this.updater.enqueueSetState(this, partialState, callback, &apos;setState&apos;);
+  !(typeof partialState === 'object' || typeof partialState === 'function' || partialState == null) ? invariant(false, 'setState
+(...): takes an object of state variables to update or a function which returns an object of state variables.') : void 0;
+  this.updater.enqueueSetState(this, partialState, callback, 'setState');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1104,7 +1096,7 @@ null&apos; : typeof render) : void 0;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">forceUpdate = function (callback) {
-  this.updater.enqueueForceUpdate(this, callback, &apos;forceUpdate&apos;);
+  this.updater.enqueueForceUpdate(this, callback, 'forceUpdate');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1119,9 +1111,9 @@ null&apos; : typeof render) : void 0;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setState = function (partialState, callback) {
-  !(typeof partialState === &apos;object&apos; || typeof partialState === &apos;function&apos; || partialState == null) ? invariant(false, &apos;setState
-(...): takes an object of state variables to update or a function which returns an object of state variables.&apos;) : void 0;
-  this.updater.enqueueSetState(this, partialState, callback, &apos;setState&apos;);
+  !(typeof partialState === 'object' || typeof partialState === 'function' || partialState == null) ? invariant(false, 'setState
+(...): takes an object of state variables to update or a function which returns an object of state variables.') : void 0;
+  this.updater.enqueueSetState(this, partialState, callback, 'setState');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1148,17 +1140,17 @@ null&apos; : typeof render) : void 0;
 
 		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
 		var test3 = {};
-		&apos;abcdefghijklmnopqrst&apos;.split(&apos;&apos;).forEach(function (letter) {
+		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
 			test3[letter] = letter;
 		});
-		if (Object.keys(Object.<span class="apidocCodeKeywordSpan">assign</span>({}, test3)).join(&apos;&apos;) !==
-				&apos;abcdefghijklmnopqrst&apos;) {
+		if (Object.keys(Object.<span class="apidocCodeKeywordSpan">assign</span>({}, test3)).join('') !==
+				'abcdefghijklmnopqrst') {
 			return false;
 		}
 
 		return true;
 	} catch (err) {
-		// We don&apos;t expect any of the above to throw, but better to be safe.
+		// We don't expect any of the above to throw, but better to be safe.
 ...</pre></li>
     </ul>
 
@@ -1193,13 +1185,12 @@ null&apos; : typeof render) : void 0;
     }
   } else {
     var iteratorFn = getIteratorFn(children);
-    if (typeof iteratorFn === &apos;function&apos;) {
+    if (typeof iteratorFn === 'function') {
 {
   // Warn about using Maps as children
   if (iteratorFn === children.entries) {
-    !didWarnAboutMaps ? warning(false, &apos;Using Maps as children is unsupported and will likely yield &apos; + &apos;unexpected
- results. Convert it to a sequence/iterable of keyed &apos; + &apos;ReactElements instead.%s&apos;, ReactDebugCurrentFrame.<span
- class="apidocCodeKeywordSpan">getStackAddendum</span>()) : void 0;
+    !didWarnAboutMaps ? warning(false, 'Using Maps as children is unsupported and will likely yield ' + 'unexpected
+ results. Convert it to a sequence/iterable of keyed ' + 'ReactElements instead.%s', ReactDebugCurrentFrame.<span class="apidocCodeKeywordSpan">getStackAddendum</span>()) : void 0;
     didWarnAboutMaps = true;
   }
 }
@@ -1280,8 +1271,7 @@ var ii = 0;
  * See https://reactjs.org/docs/react-api.html#cloneelement
  */
 function cloneElement(element, config, children) {
-!!(element === null || element === undefined) ? invariant(false, &apos;React.<span class="apidocCodeKeywordSpan">cloneElement</span
->(...): The argument must be a React element, but you passed %s.&apos;, element) : void 0;
+!!(element === null || element === undefined) ? invariant(false, 'React.<span class="apidocCodeKeywordSpan">cloneElement</span>(...): The argument must be a React element, but you passed %s.', element) : void 0;
 
 var propName = void 0;
 
@@ -1306,8 +1296,8 @@ var props = _assign({}, element.props);
     calculateChangedBits = null;
   } else {
     {
-      !(calculateChangedBits === null || typeof calculateChangedBits === &apos;function&apos;) ? warning_1(false, &apos;createContext: Expected
- the optional second argument to be a &apos; + &apos;function. Instead received: %s&apos;, calculateChangedBits) : void 0;
+      !(calculateChangedBits === null || typeof calculateChangedBits === 'function') ? warning_1(false, 'createContext: Expected
+ the optional second argument to be a ' + 'function. Instead received: %s', calculateChangedBits) : void 0;
     }
   }
 
@@ -1357,13 +1347,13 @@ var props = _assign({}, element.props);
     <li>description and source-code<pre class="apidocCodePre">function createElementWithValidation(type, props, children) {
   var validType = isValidElementType(type);
 
-  // We warn in this case but don&apos;t throw. We expect the element creation to
+  // We warn in this case but don't throw. We expect the element creation to
   // succeed and there will likely be errors in render.
   if (!validType) {
-    var info = &apos;&apos;;
-    if (type === undefined || typeof type === &apos;object&apos; &amp;&amp; type !== null &amp;&amp; Object.keys(type).length === 0) {
-      info += &apos; You likely forgot to export your component from the file &apos; + &quot;it&apos;s defined in, or you might have mixed up default
- and named imports.&quot;;
+    var info = '';
+    if (type === undefined || typeof type === 'object' &amp;&amp; type !== null &amp;&amp; Object.keys(type).length === 0) {
+      info += ' You likely forgot to export your component from the file ' + "it's defined in, or you might have mixed up default
+ and named imports.";
     }
 
     var sourceInfo = getSourceInfoErrorAddendum(props);
@@ -1373,19 +1363,19 @@ var props = _assign({}, element.props);
       info += getDeclarationErrorAddendum();
     }
 
-    info += getStackAddendum() || &apos;&apos;;
+    info += getStackAddendum() || '';
 
     var typeString = void 0;
     if (type === null) {
-      typeString = &apos;null&apos;;
+      typeString = 'null';
     } else if (Array.isArray(type)) {
-      typeString = &apos;array&apos;;
+      typeString = 'array';
     } else {
       typeString = typeof type;
     }
 
-    warning_1(false, &apos;React.createElement: type is invalid -- expected a string (for &apos; + &apos;built-in components) or a class/function
- (for composite &apos; + &apos;components) but got: %s.%s&apos;, typeString, info);
+    warning_1(false, 'React.createElement: type is invalid -- expected a string (for ' + 'built-in components) or a class/function
+ (for composite ' + 'components) but got: %s.%s', typeString, info);
   }
 
   var element = createElement.apply(this, arguments);
@@ -1396,9 +1386,9 @@ var props = _assign({}, element.props);
     return element;
   }
 
-  // Skip key warning if the type isn&apos;t valid since our key validation logic
-  // doesn&apos;t expect a non-string/function type and can throw confusing errors.
-  // We don&apos;t want exception behavior to differ between dev and prod.
+  // Skip key warning if the type isn't valid since our key validation logic
+  // doesn't expect a non-string/function type and can throw confusing errors.
+  // We don't want exception behavior to differ between dev and prod.
   // (Rendering will throw with a helpful message and as soon as the type is
   // fixed, the key warnings will appear.)
   if (validType) {
@@ -1432,12 +1422,12 @@ var props = _assign({}, element.props);
   validatedFactory.type = type;
   // Legacy hook: remove it
   {
-    Object.defineProperty(validatedFactory, &apos;type&apos;, {
+    Object.defineProperty(validatedFactory, 'type', {
       enumerable: false,
       get: function () {
-        lowPriorityWarning$1(false, &apos;Factory.type is deprecated. Access the class directly &apos; + &apos;before passing it to createFactory
-.&apos;);
-        Object.defineProperty(this, &apos;type&apos;, {
+        lowPriorityWarning$1(false, 'Factory.type is deprecated. Access the class directly ' + 'before passing it to createFactory
+.');
+        Object.defineProperty(this, 'type', {
           value: type
         });
         return type;
@@ -1482,12 +1472,12 @@ var props = _assign({}, element.props);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function forwardRef(render) {
   {
-    !(typeof render === &apos;function&apos;) ? warning_1(false, &apos;forwardRef requires a render function but was given %s.&apos;, render === null
- ? &apos;null&apos; : typeof render) : void 0;
+    !(typeof render === 'function') ? warning_1(false, 'forwardRef requires a render function but was given %s.', render === null
+ ? 'null' : typeof render) : void 0;
 
     if (render != null) {
-      !(render.defaultProps == null &amp;&amp; render.propTypes == null) ? warning_1(false, &apos;forwardRef render functions do not support
-propTypes or defaultProps. &apos; + &apos;Did you accidentally pass a React component?&apos;) : void 0;
+      !(render.defaultProps == null &amp;&amp; render.propTypes == null) ? warning_1(false, 'forwardRef render functions do not support
+propTypes or defaultProps. ' + 'Did you accidentally pass a React component?') : void 0;
     }
   }
 
@@ -1509,7 +1499,7 @@ propTypes or defaultProps. &apos; + &apos;Did you accidentally pass a React comp
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isValidElement(object) {
-  return typeof object === &apos;object&apos; &amp;&amp; object !== null &amp;&amp; object.$$typeof === REACT_ELEMENT_TYPE;
+  return typeof object === 'object' &amp;&amp; object !== null &amp;&amp; object.$$typeof === REACT_ELEMENT_TYPE;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1537,3 +1527,4 @@ propTypes or defaultProps. &apos; + &apos;Did you accidentally pass a React comp
     ]
 </div>
 </div>
+</body></html>
