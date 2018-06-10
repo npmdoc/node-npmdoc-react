@@ -91,7 +91,7 @@
         "type": "git",
         "url": "git+https://github.com/facebook/react.git"
     },
-    "version": "16.4.0",
+    "version": "2018.6.10",
     "bin": {}
 }
 ```
